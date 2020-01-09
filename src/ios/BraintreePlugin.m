@@ -163,7 +163,7 @@ NSString *countryCode;
     BTDropInController *dropIn = [[BTDropInController alloc] initWithAuthorization:self.token request:paymentRequest handler:^(BTDropInController * _Nonnull controller, BTDropInResult * _Nullable result, NSError * _Nullable error) {
         [self.viewController dismissViewControllerAnimated:YES completion:nil];
         if (error != nil) {
-            NSLog(@"ERROR: %@", [error localizedDescription]);
+            NSLog(@"ERROR OR NOT: %@", [error localizedDescription]);
             CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[error localizedDescription]];
 
             [self.commandDelegate sendPluginResult:pluginResult callbackId:dropInUIcallbackId];
